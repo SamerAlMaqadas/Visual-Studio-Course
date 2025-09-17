@@ -1,0 +1,35 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+    <body>
+    <div class="container">
+        <header id="animatedHeader">🎵 My Favorite Song 🎵</header>
+
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Kw9JYkhyVUg?si=V9GeHVdrU1ggRS8S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.getElementById("animatedHeader");
+
+            let hue = 0;
+            function animateHeaderColor() {
+                hue = (hue + 1) % 360;
+                header.style.color = `hsl(${hue}, 100%, 60%)`;
+                requestAnimationFrame(animateHeaderColor);
+            }
+
+            animateHeaderColor();
+        });
+
+    </script>
+
+
+
+    </body>
+</html>
